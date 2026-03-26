@@ -4,16 +4,7 @@ import Link from 'next/link'
 
 export const revalidate = 0;
 
-interface Photo {
-  id: string
-  image_url: string
-  caption: string
-  category_id: string
-  categories: {
-    id: string
-    name: string
-  } | null
-}
+
 
 // O Next.js passa os parâmetros da URL (searchParams) para a função
 export default async function Home({ searchParams }: { searchParams: { cat?: string } }) {
