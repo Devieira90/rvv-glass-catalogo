@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
 
+
 export const revalidate = 0;
 
 interface Photo {
@@ -28,10 +29,10 @@ export default async function Home({ searchParams }: { searchParams: { cat?: str
 
   // Se o usuário clicou em um filtro, filtramos no banco!
   if (searchParams.cat) {
-    query = query.eq('category_id', searchParams.cat);
+    query = query.eq('category_id', searchParams?.cat);
   }
 
-  const { data: photos, error } = await query;
+const { data: photos } = await query;
 
   return (
     <main className="min-h-screen pb-20" style={{ background: 'linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%)' }}>
@@ -49,7 +50,7 @@ export default async function Home({ searchParams }: { searchParams: { cat?: str
           <Link 
             href="/"
             className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 ${
-              !searchParams.cat 
+              !searchParams?.cat 
                 ? 'bg-teal-600 text-white shadow-lg shadow-teal-300' 
                 : 'bg-white/80 backdrop-blur-sm text-teal-700 border-2 border-teal-200 hover:bg-teal-50 hover:border-teal-300'
             }`}
