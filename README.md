@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🪟 RVV GLASS - Catálogo Digital
 
-## Getting Started
+O **RVV GLASS** é um catálogo digital moderno e responsivo desenvolvido para facilitar a exibição de serviços de vidraçaria e serralheria de alumínio. O projeto permite que o administrador gerencie fotos de serviços realizados, enquanto os clientes podem filtrar por categorias e solicitar orçamentos via WhatsApp de forma dinâmica.
 
-First, run the development server:
+## 🚀 Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este projeto foi construído com o que há de mais moderno no ecossistema Web:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+- **Banco de Dados & Auth:** [Supabase](https://supabase.com/) (PostgreSQL)
+- **Storage:** Supabase Storage (para hospedagem das imagens)
+- **Deploy:** [Vercel](https://vercel.com/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Desafios Técnicos & Soluções (Case de Sucesso)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Durante o desenvolvimento, enfrentei um desafio de compatibilidade de hardware. O ambiente de desenvolvimento utiliza um processador **Intel Core i5 de 2ª Geração (Sandy Bridge)**, que não possui suporte às instruções **BMI2** exigidas pelo compilador SWC (Rust) nativo do Next.js moderno.
 
-## Learn More
+**Solução:** Implementei uma configuração personalizada via `.babelrc` para desativar o SWC e forçar o uso do **Babel**. Isso garantiu a estabilidade do ambiente de desenvolvimento sem comprometer as funcionalidades do Next.js 14, permitindo a conclusão da Sprint 1 com sucesso.
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Dashboard Administrativo:** Login seguro para upload de fotos e gerenciamento de categorias.
+- **Filtro Inteligente:** Filtros dinâmicos via URL que permitem ao cliente navegar por categorias (Ex: Box, Janelas, Espelhos).
+- **Mensagens Dinâmicas:** Integração com a API do WhatsApp que já envia a descrição do produto escolhido para o vendedor.
+- **Design Responsivo:** Interface otimizada para dispositivos móveis, facilitando o uso por clientes no dia a dia.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Como Instalar e Rodar
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/SEU_USUARIO/rvv-glass-catalogo.git](https://github.com/SEU_USUARIO/rvv-glass-catalogo.git)
