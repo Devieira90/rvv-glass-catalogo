@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const revalidate = 0;
 
@@ -68,15 +69,16 @@ export default async function Home({ searchParams }: { searchParams: { cat?: str
             {photos?.map((photo) => (
               <article key={photo.id} className="bg-white rounded-2xl shadow-lg border border-teal-100 overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                 <div className="aspect-[4/3] w-full relative bg-gradient-to-br from-teal-50 to-teal-100 p-3">
-                  <img 
-                    src={photo.image_url} 
-                    alt={photo.caption} 
-                    className="object-contain w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-500" 
-                  />
+                  <Image 
+  src={photo.image_url} 
+  alt={photo.caption} 
+  fill
+  className="object-contain w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-500" 
+/>
                 </div>
                 <div className="p-6">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-teal-700 bg-teal-100 px-3 py-1.5 rounded-full inline-block">
-                    {(photo.categories as any)?.name}
+                   {(photo.categories as { name: string }[])?.[0]?.name}
                   </span>
                   <h3 className="mt-4 font-semibold text-lg leading-snug min-h-[3.5rem] line-clamp-2 text-slate-800">
                     {photo.caption}
