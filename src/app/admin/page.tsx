@@ -73,7 +73,7 @@ export default function AdminPanel() {
       if (dbErr) throw dbErr
       alert('Foto publicada!')
       setCaption(''); setFile(null);
-    } catch (err: any) { alert(err.message) }
+    } catch (err ) { alert(err instanceof Error ? err.message : 'Erro desconhecido' ) }
     finally { setLoading(false) }
   }
 
