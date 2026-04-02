@@ -30,4 +30,4 @@ Durante o desenvolvimento, enfrentei um desafio de compatibilidade de hardware. 
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/SEU_USUARIO/rvv-glass-catalogo.git](https://github.com/SEU_USUARIO/rvv-glass-catalogo.git)
+   git clone [https://github.com/Devieira90/rvv-glass-catalogo.git](https://github.com/Devieira90/rvv-glass-catalogo.git)
