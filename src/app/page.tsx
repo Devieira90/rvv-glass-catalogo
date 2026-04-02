@@ -84,7 +84,7 @@ export default async function Home({ searchParams }: { searchParams: { cat?: str
                     {photo.caption}
                   </h3>
                   <a 
-                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Olá! Vi essa foto no catálogo: "${photo.caption}"`} 
+                    href={`https://wa.me/5521990641623?text=Olá! Vi essa foto no catálogo: "${photo.caption}"`} 
                     target="_blank" 
                     className="mt-6 flex items-center justify-center gap-2 w-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold py-4 rounded-xl hover:from-[#20b859] hover:to-[#0e6b5e] transition-all shadow-md hover:shadow-lg"
                   >
