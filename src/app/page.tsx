@@ -40,6 +40,8 @@ export default async function Home({ searchParams }: { searchParams: { cat?: str
           >
             Todos
           </Link>
+
+
           {categories?.map((cat) => (
             <Link 
               key={cat.id} 
